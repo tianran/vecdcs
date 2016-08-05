@@ -1,0 +1,10 @@
+/Users/tianran/data/enwiki_partial/wiki_00
+/Users/tianran/data/enwiki_partial/wiki_01
+/Users/tianran/data/enwiki_partial/wiki_02
+/Users/tianran/data/enwiki_partial/wiki_03
+/Users/tianran/data/enwiki_partial/wiki_04
+/Users/tianran/data/enwiki_partial/wiki_05
+/Users/tianran/data/enwiki_partial/wiki_06
+/Users/tianran/data/enwiki_partial/wiki_07
+/Users/tianran/data/enwiki_partial/wiki_08
+/Users/tianran/data/enwiki_partial/wiki_09
