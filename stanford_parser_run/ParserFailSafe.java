@@ -80,7 +80,8 @@ public class ParserFailSafe {
 
             if (lp == null) {
                 try {
-                    ObjectInputStream in = new ObjectInputStream(new GZIPInputStream(new FileInputStream(parser_model_file_path)));
+                    ObjectInputStream in = new ObjectInputStream(new GZIPInputStream(ClassLoader.getSystemResourceAsStream(parser_model_file_path)));
+                    //ObjectInputStream in = new ObjectInputStream(new GZIPInputStream(new FileInputStream(parser_model_file_path)));
                     lp = LexicalizedParser.loadModel(in);
                     in.close();
                     if (extraArgs.length > 0) {

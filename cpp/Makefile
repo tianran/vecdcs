@@ -27,6 +27,8 @@ CC=g++
 CFLAGS=-Ofast -std=c++11 -Wall
 LFLAGS=-pthread
 
+EIGEN_DIR=~/external/Eigen-3.2.9
+
 MYLIB_DIR=~/mylib/cpp
 MYLIB=\
 	$(MYLIB_DIR)/Vocab_Aux.o\
@@ -42,16 +44,16 @@ $(MYLIB):
 	cd $(MYLIB_DIR) && $(MAKE)
 
 acl2016_eval/%.o: acl2016_eval/%.cpp acl2016_eval/%.h
-	$(CC) -c $(CFLAGS) -I $(MYLIB_DIR) -I . $< -o $@
+	$(CC) -c $(CFLAGS) -I $(EIGEN_DIR) -I $(MYLIB_DIR) -I . $< -o $@
 
 acl2016_eval/%: acl2016_eval/%.cpp $(MYLIB) $(OBJECTS) $(EVAL_OBJECTS)
-	$(CC) $(CFLAGS) -I $(MYLIB_DIR) -I . $^ $(LFLAGS) -o $@
+	$(CC) $(CFLAGS) -I $(EIGEN_DIR) -I $(MYLIB_DIR) -I . $^ $(LFLAGS) -o $@
 
 %.o: %.cpp %.h
-	$(CC) -c $(CFLAGS) -I $(MYLIB_DIR) $< -o $@
+	$(CC) -c $(CFLAGS) -I $(EIGEN_DIR) -I $(MYLIB_DIR) $< -o $@
 
 %: %.cpp $(MYLIB) $(OBJECTS)
-	$(CC) $(CFLAGS) -I $(MYLIB_DIR) $^ $(LFLAGS) -o $@
+	$(CC) $(CFLAGS) -I $(EIGEN_DIR) -I $(MYLIB_DIR) $^ $(LFLAGS) -o $@
 
 clean:
 	rm -f $(OBJECTS) $(TARGETS) $(EVAL_OBJECTS) $(EVAL_TARGETS)
