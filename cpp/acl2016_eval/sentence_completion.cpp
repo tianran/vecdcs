@@ -13,10 +13,11 @@ int main(int argc, char* argv[]) {
 
     if (argc == 1) {
         cout << "Test on sentence completion task." << endl;
-        cout << "Usage: sentence_completion DATA VOCAB (norole|ROLE) MODEL OUT" << endl;
+        cout << "Usage: sentence_completion DATA ANSWER VOCAB (norole|ROLE) MODEL OUT" << endl;
         cout << endl;
         cout << "Arguments:" << endl;
         cout << "\tDATA\tdata file" << endl;
+        cout << "\tANSWER\tanswer file" << endl;
         cout << "\tVOCAB\tword list" << endl;
         cout << "\tnorole\tif set, use a no-role model" << endl;
         cout << "\tROLE\trole list" << endl;
@@ -31,10 +32,11 @@ int main(int argc, char* argv[]) {
     }
 
     const string data_fn(argv[1]);
-    const string vocab_fn(argv[2]);
-    const string role_fn(argv[3]);
-    const string comp_model_fn(argv[4]);
-    const string answer_fn(argv[5]);
+    const string answer_fn(argv[2]);
+    const string vocab_fn(argv[3]);
+    const string role_fn(argv[4]);
+    const string comp_model_fn(argv[5]);
+    const string out_fn(argv[6]);
 
     VecDCS_Model* vm;
     if (role_fn == "norole") {
@@ -45,6 +47,7 @@ int main(int argc, char* argv[]) {
 
     ifstream data_file(data_fn);
     ifstream answer_file(answer_fn);
+    ofstream out_file(out_fn);
 
     int max_index = -1;
     float max_score = -2.0f;
@@ -73,7 +76,7 @@ int main(int argc, char* argv[]) {
 
             score = (survec * wvec)(0, 0);
         }
-        cerr << score << endl;
+        out_file << score << endl;
         if (score > max_score) {
             max_score = score;
             max_index = counter;
@@ -98,6 +101,7 @@ int main(int argc, char* argv[]) {
             counter = 0;
         }
     }
+    out_file.close();
 
     delete vm;
     cout << (double)correctnum / (double)qnum << endl;
