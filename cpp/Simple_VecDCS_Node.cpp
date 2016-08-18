@@ -22,7 +22,6 @@ const RowVectorXf& Simple_VecDCS_Node::get_surrounding_vec() const {
 
 void Simple_VecDCS_Node::substitute(const Eigen::RowVectorXf& vec) {
     assert(string(word, 0, 3) == "**_");
-    assert(children.empty());
     assert(sub_tree_vec.size() == 0);
     sub_tree_vec = vec;
 }
@@ -34,7 +33,6 @@ void Simple_VecDCS_Node::calc_sub_tree_vec(const VecDCS_Model& vm) {
         for (auto x : children) {
             if (string(x->word, 0, 3) == "**_") {
                 assert(static_cast<Simple_VecDCS_Node *>(x)->sub_tree_vec.size() > 0);
-                assert(static_cast<Simple_VecDCS_Node *>(x)->children.empty());
             } else {
                 static_cast<Simple_VecDCS_Node *>(x)->calc_sub_tree_vec(vm);
             }
