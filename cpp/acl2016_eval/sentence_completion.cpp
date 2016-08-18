@@ -24,9 +24,9 @@ int main(int argc, char* argv[]) {
         cout << "\tMODEL\tmodel file" << endl;
         cout << "\tOUT\toutput file" << endl;
         cout << "Example 1:" << endl;
-        cout << "./sentence_completion MSRSentComp.txt vocab.txt roles.txt model-001 MSRSentComp-out.txt" << endl;
+        cout << "./sentence_completion MSRSentComp.txt MSRSentComp-answer.txt vocab.txt roles.txt model-001 MSRSentComp-out.txt" << endl;
         cout << "Example 2:" << endl;
-        cout << "./sentence_completion MSRSentComp.txt vocab.txt norole norole-model-001 MSRSentComp-out.txt" << endl;
+        cout << "./sentence_completion MSRSentComp.txt MSRSentComp-answer.txt vocab.txt norole norole-model-001 MSRSentComp-out.txt" << endl;
         cout << endl;
         return 0;
     }
