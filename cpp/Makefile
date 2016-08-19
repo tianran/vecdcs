@@ -27,9 +27,9 @@ CC=g++
 CFLAGS=-Ofast -std=c++11 -Wall
 LFLAGS=-pthread
 
-EIGEN_DIR=~/external/Eigen-3.2.9
+EIGEN_DIR=../external/Eigen-3.2.9
 
-MYLIB_DIR=~/mylib/cpp
+MYLIB_DIR=../mylib/cpp
 MYLIB=\
 	$(MYLIB_DIR)/Vocab_Aux.o\
 	$(MYLIB_DIR)/DAO.o\

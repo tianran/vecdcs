@@ -3,9 +3,9 @@ project(vecdcs_cpp)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-include_directories(~/external/Eigen-3.2.9)
+include_directories(../external/Eigen-3.2.9)
 
-set(MYLIB_DIR ~/mylib/cpp)
+set(MYLIB_DIR ../mylib/cpp)
 
 include_directories(${MYLIB_DIR})
 link_directories(${MYLIB_DIR})
