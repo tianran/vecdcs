@@ -16,7 +16,7 @@ In this demo, we compile the source, download a sample corpus, train a model on 
 
 Assume the working directory is the root of this git repo. 
 
-`
+```shell
 cd external/
 ./get_Eigen-3.2.9.sh
 cd ../cpp/
@@ -28,7 +28,7 @@ cd ../../scala/
 mkdir classes
 scalac -d classes $(find . -name '*.scala')
 cd ../
-`
+```
 
 ### Download a sample corpus:
 
