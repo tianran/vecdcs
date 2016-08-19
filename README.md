@@ -59,7 +59,7 @@ As an example, we train a model on the previously obtained DCS trees. We train 6
 cpp/train words.sort roles.sort model- 0 6 10 200 4 data/enwiki-partial-parsed/parse-??.out.dcs
 ```
 
-The output model file will be named `model-006` (one model for each epoch).
+The output model file will be named `model-006` (one model per epoch).
 
 ### See trained model:
 
