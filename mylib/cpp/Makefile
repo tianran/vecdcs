@@ -9,7 +9,7 @@ OBJECTS=\
 CC=g++
 CFLAGS=-Ofast -std=c++11 -Wall
 
-EIGEN_DIR=../external/Eigen-3.2.9
+EIGEN_DIR=../../external/Eigen-3.2.9
 
 all: $(OBJECTS)
 
