@@ -100,7 +100,7 @@ cd acl2016_eval/
 cd ../
 ```
 
-## Reproduce the results in our ACL2016 paper:
+## Reproduce the results of our ACL2016 paper:
 
 ### for phrase similarity:
 
